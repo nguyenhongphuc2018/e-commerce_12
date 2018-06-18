@@ -1,0 +1,9 @@
+<% provide(:title, t(:about_title)) %>
+<h1><%= t(:about_title)%></h1>
+<p>
+  <%= t(:about_detail, 
+  rails_tut: link_to(raw("<em>#{t(:rails_tut)}</em>"), "http://railstutorial.org"),
+  screencast_series: link_to( t(:screencast_series), "http://screencasts.railstutorial.org/"),
+  rails_link: link_to( t(:rails), "http://rubyonrails.org/")
+  ).html_safe %>
+</p>
