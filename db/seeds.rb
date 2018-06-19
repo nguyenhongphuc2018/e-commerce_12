@@ -3,6 +3,11 @@ password_confirmation: "123456", role: 2,
  address: FFaker::Address.street_address + ", " + FFaker::Address.city, 
  verified: true, activated_at: Time.zone.now
 
+ User.create! name: "hai ha", email: "haiha21.gm@gmail.com", password: "123456",
+ password_confirmation: "123456", role: 1,
+  address: FFaker::Address.street_address + ", " + FFaker::Address.city, 
+  verified: true, activated_at: Time.zone.now
+
 99.times do |n|
   name = FFaker::Name.name
   email = FFaker::Internet.email
@@ -13,4 +18,9 @@ password_confirmation: "123456", role: 2,
   birthday = FFaker::Time.between 50.year.ago, 20.year.ago
   User.create! name: name, email: email, password: password, password_confirmation: password,
     verified: true, activated_at: Time.zone.now, address: address, phone: phone, birthday: birthday
+end
+
+users = User.order(:created_at).take(6)
+30.times do
+  users.each { |user| user.category.create! name: FFaker::Name.name }
 end

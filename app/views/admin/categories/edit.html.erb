@@ -1,0 +1,16 @@
+<% provide :title, t(:home_title) %>
+<% provide :btn_text, t("admin.category.edit.submit") %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="h2 text-center">
+      <%= t "admin.category.edit.title" %>
+    </div>
+  </div>
+  <div class="margin-top-15 magin-left-15">
+    <%= link_to t("admin.back"), categories_path, class:"btn btn-success" %>
+  </div>
+  <div class="panel-body">
+    <%= render "form", category: @category %>
+  </div>
+</div>
