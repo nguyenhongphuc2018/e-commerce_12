@@ -20,7 +20,7 @@
             <i class="fa fa-user fa-fw"></i> <%= t "admin.dashbroad.header.user_profile" %>
           <% end %>
         <li class="divider"></li>
-          <%= link_to "#"  do %>
+          <%= link_to logout_path, method: :delete  do %>
             <i class="fa fa-sign-out fa-fw"></i> <%= t "admin.dashbroad.header.logout" %>
           <% end %>
         </li>
