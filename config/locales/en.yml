@@ -1,0 +1,36 @@
+en:
+  app_title: "Ruby on Rails Tutorial Sample App"
+  rails: "Ruby on Rails"
+  rails_tut: "Ruby on Rails Tutorial"
+  michael_hartl : "Michael Hartl"
+  book: "book"
+  header_logo: "E-COMMERCE"
+  header_menu:
+    home: "Home"
+    help: "Help"
+    login: "Log in"  
+  footer_menu:
+    about: "About"
+    contact: "Contact"
+    news: "News"
+  footer_detail: "The %{rails_tut} by %{michael_hartl}"  
+  home_title: "Home"
+  welcome_page: "Welcome to the Sample App"
+  home_detail: "This is the home page for the %{rails_tut} 
+    sample application"
+  rails_logo: "Rails logo"
+  sign_up_now: "Sign up now!"
+  about_title: "About"
+  about_detail: "The %{rails_tut} and %{screencast_series}
+    to teach web development with %{rails_link}.
+    This is the sample application for the tutorial."
+  screencast_series: "screencast series"
+  help_title: "Help"
+  rails_tut_help: "Rails Tutorial help page"
+  help_detail: "Get help on the Ruby on Rails Tutorial at the
+    %{rails_tut} To get help on this sample app, see the %{rails_book}"
+  contact_title: "Contact"
+  contact_detail: "Contact the Ruby on Rails Tutorial about the sample app at the %{rails_tut_contact}."
+  rails_tut_contact: "contact page"  
+  signup_title: "Sign up"
+  signup_detail: "This will be a signup page for new users."
