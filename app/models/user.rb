@@ -8,10 +8,11 @@ class User < ApplicationRecord
   has_many :orders
   has_many :comments
   has_many :products, dependent: :destroy
-  has_many :category, dependent: :destroy
+  has_many :categories, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 
-  validates :name, presence: true, length: {maximum: Settings.user.name.maximum}
+  validates :name, presence: true, length: {maximum:
+    Settings.user.name.maximum}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
     length: {maximum: Settings.user.email.maximum},

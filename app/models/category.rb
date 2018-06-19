@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   belongs_to :user
-  has_many :product
+  has_many :product, dependent: :destroy
 
   validates :name, presence: true,
     length: {maximum: Settings.category.name.maximum,

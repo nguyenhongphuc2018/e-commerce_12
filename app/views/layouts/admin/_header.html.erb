@@ -47,8 +47,13 @@
             <% end %>
           </li>
           <li>
-            <%= link_to categories_path do %>
+            <%= link_to admin_categories_path do %>
               <i class="fa fa-bookmark fa-fw"></i> <%= t "admin.dashbroad.menu.category" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_products_path do %>
+              <i class="fa fa-shopping-bag fa-fw"></i> <%= t "admin.dashbroad.menu.product" %>
             <% end %>
           </li>
       </ul>
