@@ -1,0 +1,17 @@
+user:
+  name: 
+    maximum: 50
+  email:
+    maximum: 120
+  address:
+    maximum: 120
+  password:
+    minimum: 6
+comment:
+  description:
+    maximum: 255
+ratings:
+  point: 1..5
+category:
+  name:
+    maximum: 100

@@ -1,4 +1,15 @@
 en:
+  admin:
+    dashbroad:
+      title: "Admin"
+      menu:
+        home: Dashboard
+      search: "Search..."
+      header:
+        navbar-toggle: "Toggle navigation"
+        login: "Login"
+        logout: "Logout"
+        user_profile: "User Profile"
   app_title: "Ruby on Rails Tutorial Sample App"
   rails: "Ruby on Rails"
   rails_tut: "Ruby on Rails Tutorial"

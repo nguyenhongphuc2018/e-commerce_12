@@ -1,12 +1,19 @@
 source "https://rubygems.org"
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+gem "bcrypt"
 gem "bootstrap-sass", "3.3.7"
 gem "coffee-rails", "~> 4.2"
+gem "config", "~> 1.7.0"
+gem "ffaker", "~> 2.9.0"
 gem "figaro", "~> 1.1", ">= 1.1.1"
+gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
 gem "mysql2"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.6"
