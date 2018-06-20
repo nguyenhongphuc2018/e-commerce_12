@@ -60,3 +60,8 @@ en:
       login: "Log in"
       new_user: "New users?"
   not_found: "Not Found"    
+  view:
+    user:
+      account_user: "Account of user:"
+      account_info: "Account information"
+      save_change: "Save changes"

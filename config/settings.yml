@@ -7,6 +7,7 @@ user:
     maximum: 120
   password:
     minimum: 6
+  size_image: 50  
 comment:
   description:
     maximum: 255
