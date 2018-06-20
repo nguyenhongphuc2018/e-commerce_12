@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target="_blank">change</a>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <%= form_for @user do |f| %>
+      <%= render "shared/error_messages" %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address, class: "form-control" %>
+
+      <%= f.label :birth_day %>
+      <%= f.text_field :birthday, data:{ provide:"datepicker" }, class: "form-control" %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :password_confirmation, t("new.confirm")%>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+
+      <%= f.submit t("view.user.save_change"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
