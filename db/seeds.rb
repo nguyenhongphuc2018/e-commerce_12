@@ -1,12 +1,12 @@
 User.create! name: "hai ha", email: "haiha210.gm@gmail.com", password: "123456",
 password_confirmation: "123456", role: 2,
  address: FFaker::Address.street_address + ", " + FFaker::Address.city, 
- verified: true, activated_at: Time.zone.now
+ verified: true, activated_at: Time.zone.now, remote_avatar_url: FFaker::Avatar.image(slug = nil, size = '300x300', format = 'png', bgset = nil)
 
  User.create! name: "hai ha", email: "haiha21.gm@gmail.com", password: "123456",
  password_confirmation: "123456", role: 1,
   address: FFaker::Address.street_address + ", " + FFaker::Address.city, 
-  verified: true, activated_at: Time.zone.now
+  verified: true, activated_at: Time.zone.now, remote_avatar_url: FFaker::Avatar.image(slug = nil, size = '300x300', format = 'png', bgset = nil)
 
 99.times do |n|
   name = FFaker::Name.name
@@ -17,7 +17,8 @@ password_confirmation: "123456", role: 2,
   phone = FFaker::PhoneNumber.phone_number
   birthday = FFaker::Time.between 50.year.ago, 20.year.ago
   User.create! name: name, email: email, password: password, password_confirmation: password,
-    verified: true, activated_at: Time.zone.now, address: address, phone: phone, birthday: birthday
+    verified: true, activated_at: Time.zone.now, address: address, phone: phone, birthday: birthday,
+    remote_avatar_url: avatar
 end
 
 users = User.order(:created_at).take(6)
