@@ -1,15 +1,4 @@
 en:
-  admin:
-    dashbroad:
-      title: "Admin"
-      menu:
-        home: Dashboard
-      search: "Search..."
-      header:
-        navbar-toggle: "Toggle navigation"
-        login: "Login"
-        logout: "Logout"
-        user_profile: "User Profile"
   app_title: "Ruby on Rails Tutorial Sample App"
   rails: "Ruby on Rails"
   rails_tut: "Ruby on Rails Tutorial"
@@ -87,3 +76,48 @@ en:
       hi: "Hi" 
       welcome: "Welcome to the E-commerce2! Click on the link below to activate your account:"
       active: "Activate"
+  validate:
+    maximum: "The name must have no more than %{count} characters."
+
+  admin:
+    warning: "You don't permission to access"
+    back: "Back"
+    dashbroad:
+      title: "Admin"
+      menu:
+        home: "Dashboard"
+        category: "Category"
+      search: "Search..."
+      header:
+        navbar-toggle: "Toggle navigation"
+        login: "Login"
+        logout: "Logout"
+        user_profile: "User Profile"
+    edit: "Edit"
+    delete: "Delete"
+    create: "Create"
+    category:
+      index:
+        title: "Categories"
+        id: "Id"
+        name: "Name"
+        placeholer: "Enter name category"
+        search: "Search"
+        you_sure: "You are sure ?"
+      destroy:
+        warning: "Something wrong!!"
+        success: "Detele category success"
+      edit:
+        title: "Editing Category"
+        submit: "Submit"
+      update:
+        warning: "Something wrong!!"
+        success: "Edit category success"
+      new:
+        title: New Category
+        submit: "Submit"
+      create:
+        success: "Create category success"
+        warning: "Something wrong!!"
+    form:
+      submit: "Submit"

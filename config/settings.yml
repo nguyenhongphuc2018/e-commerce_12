@@ -16,3 +16,5 @@ ratings:
 category:
   name:
     maximum: 100
+page:
+  per: 10
