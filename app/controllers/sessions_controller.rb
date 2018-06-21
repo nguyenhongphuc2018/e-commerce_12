@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
       user.admin? ? redirect_to(admin_url) : redirect_to(user)
     else
-      flash[:warning] =  t ".message"
+      flash[:warning] = t ".message"
       redirect_to root_url
     end
   end

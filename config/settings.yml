@@ -18,3 +18,7 @@ category:
     maximum: 100
 page:
   per: 10
+picture:
+  size: 5
+  size_fit: 400
+  type: "image/jpeg,image/gif,image/png"  

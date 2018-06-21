@@ -20,11 +20,24 @@ class UsersController < ApplicationController
 
   def edit; end
 
+  def update
+    if @user.update_attributes user_params_info
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
+  end
+
+  def user_params_info
+    params.require(:user).permit :name, :email, :address,
+      :birthday, :phone, :avatar
   end
 
   def load_user
