@@ -53,8 +53,6 @@ en:
       account_user: "Account of user:"
       account_info: "Account information"
       save_change: "Save changes"
-
-
   account_activations:
     edit:
       account_activated: "Account activated!"
@@ -121,3 +119,7 @@ en:
         warning: "Something wrong!!"
     form:
       submit: "Submit"
+  sessions:
+    new:
+      remember: "Remember me on this compute"
+
