@@ -3,5 +3,5 @@ class Category < ApplicationRecord
   has_many :product
 
   validates :name, presence: true,
-    length: {maximum: Settings.category.name.maximums}
+    length: {maximum: Settings.category.name.maximum}
 end

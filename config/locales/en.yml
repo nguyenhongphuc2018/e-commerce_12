@@ -52,7 +52,6 @@ en:
   new:
     confirm: "Confirmation"
     create_account: "Create my account"
-  invalid: "Invalid email/password combination"
   signnow: "Sign up now!"
   remeber_me: "Remember me on this computer"
   sessions:
@@ -65,3 +64,26 @@ en:
       account_user: "Account of user:"
       account_info: "Account information"
       save_change: "Save changes"
+
+
+  account_activations:
+    edit:
+      account_activated: "Account activated!"
+      invalid_activation: "Invalid activation link"
+  sessions:
+    vertify_user:
+      message: "Account not activated. Check your email for the activation link."
+    create:
+      invalid: "Invalid email/password combination"
+  users:
+    create:
+      check_mail_active: "Please check your email to activate your account." 
+  user_mailer:
+    account_activation:
+      account_activation: "Account activation"
+  user_mailer:
+    account_activation:
+      ecommerce2: "E-commerce2"
+      hi: "Hi" 
+      welcome: "Welcome to the E-commerce2! Click on the link below to activate your account:"
+      active: "Activate"
