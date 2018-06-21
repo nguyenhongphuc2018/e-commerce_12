@@ -16,5 +16,4 @@ class ProductsController < ApplicationController
     flash[:danger] = t ".please_login"
     redirect_to login_path
   end
-  
 end

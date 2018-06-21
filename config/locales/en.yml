@@ -193,3 +193,9 @@ en:
         warning: "Something wrong!!"
       logged_in_user:
         please_login: "Please log in."  
+        please_login: "Please log in."
+      product:
+        product: "Product"
+        add_type_product: "Add Type Product"
+        type_product: "Type Product"
+        remove_type_product: "Remove Type Product"    

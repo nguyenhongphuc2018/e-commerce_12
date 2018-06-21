@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   has_many :product_promotions
   has_many :images, dependent: :destroy
   validates :name, :price, :descriptions, presence: true
-
+  accepts_nested_attributes_for :type_products, allow_destroy: true
   scope :new_products, (lambda do
                           where("created_at >= ?",
                             Settings.rules_new_product.days.ago)
