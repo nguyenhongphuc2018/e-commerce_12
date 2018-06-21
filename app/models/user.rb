@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :activation_token
+  attr_accessor :remember_token, :activation_token
   before_create :create_activation_digest
   enum role: {banned: 0, member: 1, admin: 2}
   enum provider: {local: 0, facebook: 1, google: 2}
@@ -45,6 +45,15 @@ class User < ApplicationRecord
 
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    update_attribute :remember_digest, User.digest(remember_token)
+  end
+
+  def forget
+    update_attribute :remember_digest, nil
   end
 
   private
