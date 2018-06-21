@@ -114,6 +114,50 @@ p {
   border-bottom: 1px solid white;
 }
 
+.navbar-brand {
+  padding-top: 15px !important;
+}
+
+.icon-cart {
+  color: white !important;
+  display:block;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  &:hover{
+    color: black !important;
+    .icon-cart-num {
+      color: white;
+    }
+  }
+}
+
+.icon-cart-bg {
+  background: $dark-blue-sky !important;
+  font-size: 24px;
+}
+
+.carousel-caption {
+  top: 50% !important;
+  bottom: auto;
+}
+
+.slide-item {
+  img{
+    width: 100%;
+  }
+}
+
+.icon-cart-num {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.active {
+  border-bottom: 1px solid white;
+}
+
 /* footer */
 
 footer {
@@ -179,8 +223,15 @@ aside {
 
 /* silder product */
 
-.carousel-control {width:  4%;}
-.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
+.carousel-control {
+  width:  4%;
+}
+
+.carousel-control.left,.carousel-control.right {
+  margin-left:15px;
+  background-image:none;
+}
+
 @media (max-width: 767px) {
   .carousel-inner .active.left {left: -100%;}
   .carousel-inner .next {left:  100%;}
@@ -211,6 +262,7 @@ a.thumbnail {
 img.img-responsive {
   border: none;
 }
+
 .caption {
   .name{ 
     font-family: 'Roboto', sans-serif;
@@ -224,9 +276,9 @@ img.img-responsive {
 .hot-carousel-control {
   top: 50%;
 }
+
 .list-title {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 0;
   .h3 {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
@@ -252,6 +304,7 @@ img.img-responsive {
   font-family: 'Teko', sans-serif;
   font-size: 1.2em;
 }
+
 .sale {
   position: relative;
   display: inline-block;
@@ -282,7 +335,7 @@ img.img-responsive {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 1px solid $color_pink_swan_approx;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -390,4 +443,37 @@ h1.have-margin {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.detail {
+  .name {
+    font-size: 24px;
+    font-weight: 300;
+    color: $color_mine_shaft_approx;
+    line-height: 30px;
+    margin: 16px 0 5px;
+    text-align: left;
+  }
+  .price {
+    color: $color_red_orange_approx;
+    font-size: 19px;
+    font-weight: 500;
+  }
+  .sale_off {
+    font-weight: 300;
+    color: $color_star_dust_approx;
+    .discount-percent {
+      font-weight: 400;
+      color: $color_red_orange_approx;
+      font-size: 13px;
+    }
+  }
 }
