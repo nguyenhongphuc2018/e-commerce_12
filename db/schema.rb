@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20180626024650) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -154,5 +155,4 @@ ActiveRecord::Schema.define(version: 20180626024650) do
   add_foreign_key "ratings", "products"
   add_foreign_key "ratings", "users"
   add_foreign_key "type_products", "products"
-  add_foreign_key "types_products", "products"
 end

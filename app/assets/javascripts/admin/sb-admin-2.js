@@ -1,6 +1,27 @@
 $(function () {
-  $('#side-menu').metisMenu();
+  $('#side-menu').metisMenu()
+    
 });
+$(document).on('turbolinks:load',function() {
+  addFields();
+  removeFields();
+});
+
+addFields = function (){
+  $('#add_fields').on('click', function (even) {
+    even.preventDefault();
+    time = new Date().getTime();
+    regexp = new RegExp($('#add_fields').data('id'), 'g');
+    $('.new-field').append($('#add_fields')
+    .data('fields').replace(regexp, time));
+  });
+}
+
+removeFields = function() {
+  $('.destroy').on('click', function(even){
+    $(this).closest('.field').remove();
+  });
+}
 
 $(function () {
   $(window).bind('load resize', function () {
