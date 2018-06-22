@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :products, dependent: :destroy
   has_many :category, dependent: :destroy
+  mount_uploader :avatar, AvatarUploader
 
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -17,8 +18,7 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true,
-    length: {minimum: Settings.user.password.minimum}
-
+    length: {minimum: Settings.user.password.minimum}, allow_nil: true
   def self.new_token
     SecureRandom.urlsafe_base64
   end
@@ -60,5 +60,9 @@ class User < ApplicationRecord
   def create_activation_digest
     self.activation_token  = User.new_token
     self.activation_digest = User.digest activation_token
+  end
+
+  def picture_size
+    errors.add(:avatar, t("should_be")) if avatar.size > Settings.picture.size.megabytes
   end
 end

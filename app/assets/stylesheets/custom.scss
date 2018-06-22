@@ -184,13 +184,18 @@ input {
   padding: 10px 5px 5px;
 
   .image {
-    width: 50px;
-    height: 50px;
+    width: 85px;
+    height: 85px;
     overflow: hidden;
-    float: left;
     margin-right: 10px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     border-radius: 50%;
+  }
+
+  .image_update {
+    overflow: hidden;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   .name {

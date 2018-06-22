@@ -64,7 +64,8 @@ en:
       invalid: "Invalid email/password combination"
   users:
     create:
-      check_mail_active: "Please check your email to activate your account." 
+      check_mail_active: "Please check your email to activate your account."
+    should_be: "should be less than 5MB"   
   user_mailer:
     account_activation:
       account_activation: "Account activation"
@@ -123,3 +124,6 @@ en:
     new:
       remember: "Remember me on this compute"
 
+    edit:
+      change: "Change"
+      update_profile: "Update Profile"  
