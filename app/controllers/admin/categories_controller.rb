@@ -7,17 +7,16 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def new
-    @category = Category.new
+    @category = current_user.categories.build
   end
 
   def create
-    @category = Category.new category_params
+    @category = current_user.categories.build category_params
     if @category.save
       flash[:success] = t ".success"
-      redirect_to categories_url
+      redirect_to admin_categories_url
     else
-      flash[:warning] = t ".warning"
-      redirect_to new_category_path
+      render :new
     end
   end
 
@@ -26,7 +25,7 @@ class Admin::CategoriesController < Admin::BaseController
   def update
     if @category.update_attributes category_params
       flash[:success] = t ".success"
-      redirect_to categories_url
+      redirect_to admin_categories_url
     else
       render :edit
     end
@@ -35,7 +34,7 @@ class Admin::CategoriesController < Admin::BaseController
   def destroy
     if @category.destroy
       flash[:success] = t ".success"
-      redirect_to categories_url
+      redirect_to admin_categories_url
     else
       flash.now[:warning] = t ".warning"
     end

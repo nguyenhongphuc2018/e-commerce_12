@@ -22,5 +22,15 @@ end
 
 users = User.order(:created_at).take(6)
 30.times do
-  users.each { |user| user.category.create! name: FFaker::Name.name }
+  users.each { |user| user.categories.create! name: FFaker::Name.name }
 end
+categories = Category.order(:created_at).take(10)
+
+50.times do
+  categories.each { |category| users[1].products.create! name: FFaker::Name.name, 
+    price: (100 * FFaker::Random.rand).round(2), descriptions: FFaker::Lorem.paragraph,
+    category_id: category.id
+  }
+end
+
+Product.all.each { |product| product.images.create! image_url: FFaker::Avatar.image(slug = nil, size = '250x250', format = 'png', bgset = nil)}

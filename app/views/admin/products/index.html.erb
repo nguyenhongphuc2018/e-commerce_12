@@ -11,7 +11,7 @@
         <!-- search box -->
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <%= form_tag admin_categories_path, method: :get do %>
+            <%= form_tag admin_products_path, method: :get do %>
               <div class="input-group">
                 <%= text_field_tag "search", params[:search], placeholder: t(".placeholer"), class: "form-control"%>
                 <div class="input-group-btn">
@@ -24,29 +24,32 @@
           </div>
         </div>
         <!-- close search box -->
-        <!-- button new category -->
+        <!-- button new product -->
         <div class="text-right">
-          <%= link_to new_admin_category_path, class: "btn btn-primary" do %>
+          <%= link_to new_admin_product_path, class: "btn btn-primary" do %>
            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
           <% end %>
         </div>
-        <!-- close button new category -->
-        <!-- table category -->
+        <!-- close button new product -->
+        <!-- table product -->
         <table class="table table-striped table-hover">
           <thead>
             <tr>
               <th><%= t ".id" %></th>
               <th><%= t ".name" %></th>
-              <th colspan="2"></th>
+              <th><%= t ".price" %></th>
+              <th><%= t ".category" %></th>
+              <th><%= t ".descriptions" %></th>
+              <th colspan="3"></th>
             </tr>
           </thead>
           <tbody>
-            <%= render partial: "category", collection: @categories %>
+            <%= render partial: "product", collection: @products %>
           </tbody>
         </table>
-        <!-- close table category -->
+        <!-- close table product -->
         <div class="text-center">
-          <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+          <%= paginate @products, theme: "twitter-bootstrap-3" %>
         </div>
       </div>
     </div>

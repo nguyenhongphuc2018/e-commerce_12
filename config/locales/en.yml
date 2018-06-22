@@ -4,6 +4,7 @@ en:
   rails_tut: "Ruby on Rails Tutorial"
   michael_hartl : "Michael Hartl"
   book: "book"
+  error: "Error"
   header_logo: "E-COMMERCE"
   header_menu:
     home: "Home"
@@ -43,10 +44,16 @@ en:
     create_account: "Create my account"
   signnow: "Sign up now!"
   remeber_me: "Remember me on this computer"
+
   sessions:
     new:
       login: "Log in"
       new_user: "New users?"
+      remember: "Remember me on this compute"
+    vertify_user:
+      message: "Account not activated. Check your email for the activation link."
+    create:
+      invalid: "Invalid email/password combination"
   not_found: "Not Found"    
   view:
     user:
@@ -57,11 +64,7 @@ en:
     edit:
       account_activated: "Account activated!"
       invalid_activation: "Invalid activation link"
-  sessions:
-    vertify_user:
-      message: "Account not activated. Check your email for the activation link."
-    create:
-      invalid: "Invalid email/password combination"
+    
   users:
     create:
       check_mail_active: "Please check your email to activate your account."
@@ -86,6 +89,7 @@ en:
       menu:
         home: "Dashboard"
         category: "Category"
+        product: "Product"
       search: "Search..."
       header:
         navbar-toggle: "Toggle navigation"
@@ -95,7 +99,7 @@ en:
     edit: "Edit"
     delete: "Delete"
     create: "Create"
-    category:
+    categories:
       index:
         title: "Categories"
         id: "Id"
@@ -120,10 +124,26 @@ en:
         warning: "Something wrong!!"
     form:
       submit: "Submit"
-  sessions:
-    new:
-      remember: "Remember me on this compute"
-
-    edit:
-      change: "Change"
-      update_profile: "Update Profile"  
+    products:
+      index:
+        title: "Product"
+        id: "Id"
+        name: "Name"
+        placeholer: "Enter name product"
+        search: "Search"
+        you_sure: "You are sure ?"
+      destroy:
+        warning: "Something wrong!!"
+        success: "Detele product success"
+      edit:
+        title: "Editing Product"
+        submit: "Submit"
+      update:
+        warning: "Something wrong!!"
+        success: "Edit product success"
+      new:
+        title: "New Product"
+        submit: "Submit"
+      create:
+        success: "Create product success"
+        warning: "Something wrong!!"
