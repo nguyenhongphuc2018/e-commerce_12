@@ -1,13 +1,88 @@
-<% provide(:title, t(:home_title)) %>
-<div class="center jumbotron">
-  <h1><%= t(:welcome_page) %></h1>
+<% provide :title, t(".title") %>
 
-  <h2>
-    <%= t(:home_detail, rails_tut: link_to( t(:rails_tut), 
-    "http://www.railstutorial.org/")).html_safe %>
-  </h2>
+<div class="constainer-fluid">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
 
-  <%= link_to t(:sign_up_now), signup_path, class: "btn btn-lg btn-primary" %>
+      <div class="item active slide-item">
+        <img src="https://bit.ly/2tmKzre" class="img-responsive" alt="Los Angeles">
+        <div class="carousel-caption">
+          <p class="h1"><%= t ".silder" %></p>
+          <p><%= t ".silder_title" %></p>
+        </div>
+      </div>
+
+      <div class="item slide-item">
+        <img src="https://bit.ly/2MkkIHz" class="img-responsive" alt="Chicago">
+        <div class="carousel-caption">
+          <p class="h1"><%= t ".silder" %></p>
+          <p><%= t ".silder_title" %></p>
+        </div>
+      </div>
+    
+      <div class="item slide-item">
+        <img src="https://bit.ly/2KfN2u7" class="img-responsive" alt="New York">
+        <div class="carousel-caption">
+          <p class="h1"><%= t ".silder" %></p>
+          <p><%= t ".silder_title" %></p>
+        </div>
+      </div>
+    </div>
+  <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only"><%= t ".previous" %></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only"><%= t ".next" %></span>
+    </a>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center list-title">
+        <p class="h3"><%= t ".hot_product" %></p>
+      </div>
+      <div class="col-md-10 col-sm-offset-1">
+        <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="hotProduct">
+          <div class="carousel-inner">
+            <%= render partial: "products/hot_product", collection: @hot_products, as: :product %>
+          </div>
+          <a class="left carousel-control hot-carousel-control" href="#hotProduct" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+          </a>
+          <a class="right carousel-control hot-carousel-control" href="#hotProduct" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center list-title">
+        <p class="h3"><%= t ".new_product" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <%= render partial: "products/product", collection: @new_products, as: :product %>    
+      <div>
+    </div>
+  </div> 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center list-title">
+        <p class="h3"><%= t ".new_product" %></p>
+      </div>
+    </div>
+    <div class=row>
+      <div class="col-md-10 col-md-offset-1">
+        <%= render partial: "products/product", collection: @sale_products, as: :product %>    
+      <div>
+    </div>
+  </div>
 </div>
-
-<%= link_to image_tag("rails.png", alt: t(:rails_logo)),"http://rubyonrails.org/" %>

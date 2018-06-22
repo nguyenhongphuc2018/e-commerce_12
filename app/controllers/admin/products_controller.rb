@@ -1,8 +1,10 @@
 class Admin::ProductsController < Admin::BaseController
   before_action :load_product, except: [:index, :new, :create]
+  helper_method :sort_col, :sort_dir
 
   def index
     @products = Product.search(params[:search])
+                       .order("#{sort_col} #{sort_dir}")
                        .page(params[:page])
                        .per Settings.page.per
   end
@@ -43,6 +45,9 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
 
+  def sort_col
+    Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
   private
   def load_product
     @product = Product.find_by(id: params[:id]) || not_found

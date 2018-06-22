@@ -6,8 +6,13 @@ class Product < ApplicationRecord
   has_many :type_products
   has_many :product_promotions
   has_many :images, dependent: :destroy
-
   validates :name, :price, :descriptions, presence: true
+
+  scope :new_products, (lambda do
+                          where("created_at >= ?",
+                            Settings.rules_new_product.days.ago)
+                        .order("created_at desc")
+                        end)
 
   scope :search, (lambda do |keyword|
     keyword = keyword.to_s.strip
@@ -18,7 +23,8 @@ class Product < ApplicationRecord
     end
   end)
 
-  scope :order_by_time, ->{order(:name, :price, :descriptions, created_at: :asc)}
+  scope :order_by_time,
+    ->{order(:name, :price, :descriptions, created_at: :asc)}
 
   def new_product?
     created_at >= Settings.rules_new_product.days.ago
@@ -27,5 +33,9 @@ class Product < ApplicationRecord
   def show_img
     path = ActionController::Base.helpers.image_path(Settings.picture.default)
     images.first.image_url || path
+  end
+
+  def show_all_img
+    images.to_a.map(&:image_url)
   end
 end

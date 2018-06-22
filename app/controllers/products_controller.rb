@@ -3,4 +3,6 @@ class ProductsController < ApplicationController
     @products = Product.order_by_time
                        .page(params[:page]).per Settings.products.index.per_page
   end
+
+  def show; end
 end
