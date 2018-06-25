@@ -98,7 +98,12 @@ en:
       list_product: "LIST PRODUCTS"
       add_cart: "Add to cart"
     product:
-      new: "New" 
+      new: "New"
+      cart: "Cart"
+    show:
+      saving: "Saving: "
+      percent: "%"
+      cart_shopping: "Cart Shopping"
 
   password_resets:
     create:
@@ -186,3 +191,5 @@ en:
       create:
         success: "Create product success"
         warning: "Something wrong!!"
+      logged_in_user:
+        please_login: "Please log in."  
