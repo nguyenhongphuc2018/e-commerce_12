@@ -1,7 +1,9 @@
 class Admin::CategoriesController < Admin::BaseController
   before_action :load_category, except: [:index, :new, :create]
+  helper_method :sort_col, :sort_dir
   def index
     @categories = Category.search(params[:search])
+                          .order("#{sort_col} #{sort_dir}")
                           .page(params[:page])
                           .per Settings.page.per
   end
@@ -38,6 +40,10 @@ class Admin::CategoriesController < Admin::BaseController
     else
       flash.now[:warning] = t ".warning"
     end
+  end
+
+  def sort_col
+    Category.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 
   private
