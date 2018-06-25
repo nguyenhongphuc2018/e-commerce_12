@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest
   enum role: {banned: 0, member: 1, admin: 2}
   enum provider: {local: 0, facebook: 1, google: 2}
@@ -55,6 +55,20 @@ class User < ApplicationRecord
 
   def forget
     update_attribute :remember_digest, nil
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    digest = User.digest reset_token
+    update_columns reset_digest: digest, reset_send_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_send_at < Settings.time.hours.ago
   end
 
   private

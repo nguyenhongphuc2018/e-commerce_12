@@ -68,7 +68,7 @@ en:
   users:
     create:
       check_mail_active: "Please check your email to activate your account."
-    should_be: "should be less than 5MB"   
+    should_be: "should be less than 5MB"
   user_mailer:
     account_activation:
       account_activation: "Account activation"
@@ -77,7 +77,7 @@ en:
       ecommerce2: "E-commerce2"
       hi: "Hi" 
       welcome: "Welcome to the E-commerce2! Click on the link below to activate your account:"
-      active: "Activate"
+      active: "Activate" 
   validate:
     maximum: "The name must have no more than %{count} characters."
   products:
@@ -87,6 +87,22 @@ en:
     product:
       new: "New" 
 
+  password_resets:
+    create:
+      email_sent: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+    update:
+      pass_blank: "can't be empty"   
+      pass_has_reset: "Password has been reset."
+    pass_expired: "Password reset has expired."
+  update_pass: "Update password"
+  pass_expired: "Password reset has expired."
+  submit: "Submit"
+  forgot_pass: "Forgot password"
+  pass_reset: "Password reset"
+  to_reset: "To reset your password click the link below:"
+  expire: "This link will expire in two hours."
+  ignore: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."    
   admin:
     warning: "You don't permission to access"
     back: "Back"
