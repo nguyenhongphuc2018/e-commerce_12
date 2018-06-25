@@ -26,4 +26,5 @@ picture:
 products:
   index:
     per_page: 16
-rules_new_product: 7 
+rules_new_product: 7   
+time: 2
