@@ -80,6 +80,12 @@ en:
       active: "Activate"
   validate:
     maximum: "The name must have no more than %{count} characters."
+  products:
+    index:
+      list_product: "LIST PRODUCTS"
+      add_cart: "Add to cart"
+    product:
+      new: "New" 
 
   admin:
     warning: "You don't permission to access"

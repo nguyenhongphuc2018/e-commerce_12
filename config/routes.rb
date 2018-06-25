@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   resources :users
   resources :account_activations, only: [:edit]
-  resources :products
+  resources :products, only: [:index, :show]
   
   namespace :admin do
     get "/", to: "dashbroads#index"

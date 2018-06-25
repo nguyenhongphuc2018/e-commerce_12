@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="well well-sm">
+      <h1><%= t ".list_product" %></h1>
+  </div>
+  <%= paginate @products, theme: "twitter-bootstrap-3" %>
+  <div id="products" class="row list-group">
+    <div class="container">
+      <div class="row">
+        <%= render partial: "product", collection: @products, as: :product %> 
+      </div>  
+    </div>
+  </div> 
+  <%= paginate @products, theme: "twitter-bootstrap-3" %>
+</div>

@@ -64,6 +64,7 @@ class User < ApplicationRecord
   end
 
   def picture_size
-    errors.add(:avatar, t("should_be")) if avatar.size > Settings.picture.size.megabytes
+    errors.add(:avatar, t("should_be")) if avatar.size >
+                                           Settings.picture.size.megabytes
   end
 end
