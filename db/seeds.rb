@@ -35,4 +35,4 @@ categories = Category.order(:created_at).take(10)
   }
 end
 
-Product.all.each { |product| product.images.create! image_url: FFaker::Avatar.image(slug = nil, size = '250x250', format = 'png', bgset = nil)}
+Product.all.each { |product| product.images.create! remote_image_url_url: FFaker::Avatar.image(slug = nil, size = '250x250', format = 'png', bgset = nil)}
