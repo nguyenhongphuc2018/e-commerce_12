@@ -26,8 +26,6 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
 
-  def edit; end
-
   def update
     if @product.update_attributes product_params
       flash[:success] = t ".success"
@@ -50,8 +48,9 @@ class Admin::ProductsController < Admin::BaseController
     Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
   private
+
   def load_product
-    @product = Product.find_by(id: params[:id]) || not_found
+    @product = Product.find_by id: params[:id] || not_found
   end
 
   def product_params

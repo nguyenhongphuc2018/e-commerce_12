@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :ratings
   has_many :comments
-  has_many :type_products
+  has_many :type_products, dependent: :destroy
   has_many :product_promotions, dependent: :destroy
   has_many :images, dependent: :destroy
   validates :name, :price, :descriptions, presence: true
