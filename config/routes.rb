@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get "/", to: "dashbroads#index"
     resources :categories
     resources :products
+    resources :promotions
   end
 
   resources :password_resets, only: [:new, :create, :edit, :update]

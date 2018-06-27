@@ -62,7 +62,9 @@ en:
     new:
       login: "Log in"
       new_user: "New users?"
-      remember: "Remember me on this compute"
+      remember: "Remember me on this computer"
+      forgot_pass: "Forgot password"
+
     vertify_user:
       message: "Account not activated. Check your email for the activation link."
     create:
@@ -116,7 +118,6 @@ en:
   update_pass: "Update password"
   pass_expired: "Password reset has expired."
   submit: "Submit"
-  forgot_pass: "Forgot password"
   pass_reset: "Password reset"
   to_reset: "To reset your password click the link below:"
   expire: "This link will expire in two hours."
@@ -142,6 +143,9 @@ en:
         login: "Login"
         logout: "Logout"
         user_profile: "User Profile"
+    edit: "Edit"
+    delete: "Delete"
+    create: "Create"
     categories:
       index:
         title: "Categories"
@@ -193,9 +197,49 @@ en:
         warning: "Something wrong!!"
       logged_in_user:
         please_login: "Please log in."  
-        please_login: "Please log in."
       product:
         product: "Product"
         add_type_product: "Add Type Product"
         type_product: "Type Product"
         remove_type_product: "Remove Type Product"    
+    promotions:
+      promotion:
+        you_sure: "You are sure ?"
+      index:
+        title: "Promotions"
+        id: "Id"
+        name: "Name"
+        descriptions: "Descriptions"
+        start_date: "Start date"
+        end_date: "End date"
+        placeholer: "Enter name promotion"
+        search: "Search"
+        you_sure: "You are sure ?"
+      destroy:
+        warning: "Something wrong!!"
+        success: "Detele promotion success"
+      edit:
+        title: "Editing Promotion"
+        submit: "Submit"
+      update:
+        warning: "Something wrong!!"
+        success: "Edit promotion success"
+      new:
+        title: "New Promotion"
+        submit: "Submit"
+      create:
+        success: "Create promotion success"
+        warning: "Something wrong!!"
+  layouts:
+    admin:
+      header:
+        dashbroad: "Dashbroad"
+        category: "Category"
+        product: "Product"
+        promotion: "Promotion"
+        navbar-toggle: "Toggle navigation"
+        login: "Login"
+        logout: "Logout"
+        user_profile: "User Profile"
+  validate:
+    date: "Start date should be before end date"

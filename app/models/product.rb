@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_many :ratings
   has_many :comments
   has_many :type_products
-  has_many :product_promotions
+  has_many :product_promotions, dependent: :destroy
   has_many :images, dependent: :destroy
   validates :name, :price, :descriptions, presence: true
   accepts_nested_attributes_for :type_products, allow_destroy: true
