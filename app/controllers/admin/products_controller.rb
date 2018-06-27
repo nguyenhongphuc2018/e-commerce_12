@@ -4,19 +4,20 @@ class Admin::ProductsController < Admin::BaseController
 
   def index
     @products = Product.search(params[:search])
-                       .order("#{sort_col} #{sort_dir}")
-                       .page(params[:page])
-                       .per Settings.page.per
+      .order("#{sort_col} #{sort_dir}")
+      .page(params[:page])
+      .per Settings.page.per
   end
 
   def show; end
 
   def new
     @product = current_user.products.build
+    @product.type_products.build
   end
 
   def create
-    @product = current_user.products.build product_params
+    @product = current_user.products.new product_params
     if @product.save
       flash[:success] = t ".success"
       redirect_to admin_products_url
@@ -54,6 +55,7 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def product_params
-    params.require(:product).permit :name, :price, :category_id, :descriptions
+    params.require(:product).permit :name, :price, :category_id, :descriptions,
+      type_products_attributes: [:quantity, :size, :color, :_destroy]
   end
 end
