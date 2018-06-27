@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180626024650) do
+ActiveRecord::Schema.define(version: 20180626145359) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -110,16 +110,6 @@ ActiveRecord::Schema.define(version: 20180626024650) do
     t.index ["product_id"], name: "index_type_products_on_product_id"
   end
 
-  create_table "types_products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "color"
-    t.integer "quatity"
-    t.string "size"
-    t.bigint "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_types_products_on_product_id"
-  end
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "email"
@@ -139,6 +129,8 @@ ActiveRecord::Schema.define(version: 20180626024650) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "remember_digest"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_foreign_key "categories", "users"

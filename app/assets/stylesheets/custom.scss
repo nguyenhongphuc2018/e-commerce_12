@@ -265,7 +265,6 @@ a.thumbnail {
 img.img-responsive {
   border: none;
 }
-
 .caption {
   .name{ 
     font-family: 'Roboto', sans-serif;
@@ -279,9 +278,9 @@ img.img-responsive {
 .hot-carousel-control {
   top: 50%;
 }
-
 .list-title {
-  padding: 15px 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
   .h3 {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
@@ -333,6 +332,14 @@ img.img-responsive {
   &:after {
     transform: rotate(60deg);
   }
+}
+
+.icon-gg {
+  color: $google-icon;
+}
+
+.icon-fb {
+  color: $facebook-icon;
 }
 
 /* forms */

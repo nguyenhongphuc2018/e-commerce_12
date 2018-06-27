@@ -4,9 +4,9 @@ class Admin::ProductsController < Admin::BaseController
 
   def index
     @products = Product.search(params[:search])
-      .order("#{sort_col} #{sort_dir}")
-      .page(params[:page])
-      .per Settings.page.per
+                       .order("#{sort_col} #{sort_dir}")
+                       .page(params[:page])
+                       .per Settings.page.per
   end
 
   def show; end
