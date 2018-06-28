@@ -53,8 +53,22 @@
           </li>
           <li>
             <%= link_to admin_products_path do %>
-              <i class="fa fa-shopping-bag fa-fw"></i> <%= t ".product" %>
+              <i class="fa fa-flag fa-fw"></i> <%= t ".product" %>
             <% end %>
+            <ul class="nav nav-second-level">
+              <li>
+                <%= link_to admin_products_path do %>
+                  <i class="fa fa-shopping-bag fa-fw"></i> 
+                  <%= t ".product" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to admin_type_products_path do %>
+                  <i class="fa fa-map fa-fw"></i> 
+                  <%= t ".type_product" %>
+                <% end %>
+              </li>
+            </ul>
           </li>
            <li>
             <%= link_to admin_promotions_path do %>

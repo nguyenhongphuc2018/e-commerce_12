@@ -9,7 +9,7 @@
 
     <div class="form-group">
       <%= f.label :price %>
-      <%= f.number_field :price, step: 0.01, class: "form-control" %>
+      <%= f.number_field :price, step: 0.01, min: 0, class: "form-control" %>
     </div>
 
     <div class="form-group">
@@ -21,7 +21,7 @@
       <%= f.label :category_id %>
       <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true, class: "form-control" %>
     </div>
-    <%= link_to_add_fields "Add Type Product", f ,:type_products %> 
+    <%= link_to_add_fields t("add_type_product"), f ,:type_products %> 
     <div class="new-fields">
       <%= f.fields_for :type_products do |builder| %>
         <%= render "type_product_fields", f: builder %>

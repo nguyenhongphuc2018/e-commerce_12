@@ -180,6 +180,7 @@ en:
         placeholer: "Enter name product"
         search: "Search"
         you_sure: "You are sure ?"
+        category: "Category"
       destroy:
         warning: "Something wrong!!"
         success: "Detele product success"
@@ -230,6 +231,19 @@ en:
       create:
         success: "Create promotion success"
         warning: "Something wrong!!"
+    type_products:
+      index:
+        quantity: "Quantity"
+        color: "Color"
+        size: "Size"
+        placeholer: "Search"
+        product_name: "Product name"
+        product_id: "Product id"
+        title: "Edit Type Product"
+      type_product:
+        you_sure: "You are sure ?" 
+      edit:
+        submit: "Submit"
   layouts:
     admin:
       header:
@@ -241,5 +255,6 @@ en:
         login: "Login"
         logout: "Logout"
         user_profile: "User Profile"
+        type_product: "Type Product"
   validate:
     date: "Start date should be before end date"

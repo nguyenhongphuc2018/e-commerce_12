@@ -21,12 +21,6 @@
       <%= f.label :category_id %>
       <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true, class: "form-control" %>
     </div>
-    <%= link_to_add_fields t("add_type_product"), f ,:type_products %> 
-    <div class="new-fields">
-      <%= f.fields_for :type_products do |builder| %>
-        <%= render "type_product_fields", f: builder %>
-      <% end %>
-    </div>
      <%= f.submit yield(:btn_text), class: "btn btn-primary" %>     
   <% end %>
 </div>
