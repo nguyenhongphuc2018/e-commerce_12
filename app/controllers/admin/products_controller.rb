@@ -47,6 +47,7 @@ class Admin::ProductsController < Admin::BaseController
   def sort_col
     Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
+
   private
 
   def load_product

@@ -12,6 +12,7 @@ en:
     contact: "Contact"
     news: "News"
   footer_detail: "The %{rails_tut} by %{michael_hartl}"
+  placeholer: "Search" 
   layouts:
     header:
       logo: "E-COMMERCE"
@@ -21,7 +22,7 @@ en:
       logout: "Log out"
       account: "Account"
       profile: "Profile"
-      settings: "Settings" 
+      settings: "Settings"
   static_pages:
     home:
       silder: "Los Angeles"
@@ -99,6 +100,11 @@ en:
     index:
       list_product: "LIST PRODUCTS"
       add_cart: "Add to cart"
+      color: "Color"
+      size: "Size"
+      min_price: "Min Price"
+      max_price: "Max Price"
+      filter: "Filter"
     product:
       new: "New"
       cart: "Cart"
@@ -258,3 +264,6 @@ en:
         type_product: "Type Product"
   validate:
     date: "Start date should be before end date"
+  products:
+    index:
+      eror: "min price must be lower than max price!!!"  

@@ -23,6 +23,28 @@ class Product < ApplicationRecord
     end
   end)
 
+  scope :filter_by_price, (lambda do |min_price, max_price|
+    unless min_price.blank? && max_price.blank?
+      sql_statement = "price >= ? AND price <= ?"
+      where(sql_statement, min_price, max_price).order(price: :asc)
+    end
+  end)
+
+  scope :filter_by_color, (lambda do |color|
+    color = color.to_s.strip
+    unless color.blank?
+      sql_statement = "type_products.color LIKE ? "
+      joins(:type_products).where(sql_statement, color)
+    end
+  end)
+
+  scope :filter_by_size, (lambda do |size|
+    unless size.blank?
+      sql_statement = "type_products.size LIKE ? "
+      joins(:type_products).where(sql_statement, size)
+    end
+  end)
+
   scope :order_by_time,
     ->{order(:name, :price, :descriptions, created_at: :asc)}
 
@@ -32,7 +54,7 @@ class Product < ApplicationRecord
 
   def show_img
     path = ActionController::Base.helpers.image_path(Settings.picture.default)
-    images.first.image_url || path
+    images.first ? images.first.image_url : path
   end
 
   def show_all_img

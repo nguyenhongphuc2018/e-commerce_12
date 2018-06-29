@@ -2,13 +2,41 @@
   <div class="well well-sm">
       <h1><%= t ".list_product" %></h1>
   </div>
-  <%= paginate @products, theme: "twitter-bootstrap-3" %>
   <div id="products" class="row list-group">
     <div class="container">
       <div class="row">
-        <%= render partial: "product", collection: @products, as: :product %> 
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <%= form_tag products_path, method: :get do %>
+          <div class="filter">
+            <%= button_tag(type: "submit", class: "btn btn-info btn-block title", id: "submit") do %>
+              <%= t ".filter" %> <i class="fa fa-search"></i>
+            <% end %>
+            <p class="title_items"><%= t ".click_here" %></p>
+            <ul>
+              <li>
+                <div class="form-group">
+                  <%=label_tag :color %>
+                  <%= text_field_tag "color", params[:color], class: "form-control" %>
+                  <%=label_tag :size %>
+                  <%= number_field_tag "size", nil,{min: 30, class: "form-control"} %>
+                  <label><%= t(".min_price") %></label>
+                  <%= number_field_tag "min_price", nil,{min: 0, class: "form-control", id: "minPrice"} %>
+                  <label><%= t(".max_price") %></label>
+                  <%= number_field_tag "max_price", nil, {min: 0, class: "form-control", id: "maxPrice"} %>
+                </div>  
+              </li>
+            </ul>
+          </div>
+          <% end %>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+          <%= render partial: "product", collection: @products, as: :product %> 
+        </div>
       </div>  
     </div>
-  </div> 
-  <%= paginate @products, theme: "twitter-bootstrap-3" %>
+  </div>
+  </div>
+  <div class="margin-left-right"> 
+    <%= paginate @products, theme: "twitter-bootstrap-3" %>
+  <div>
 </div>

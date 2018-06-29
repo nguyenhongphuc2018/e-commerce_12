@@ -18,6 +18,7 @@ category:
     maximum: 100
 page:
   per: 10
+  product: 12
 picture:
   size: 5
   size_fit: 400
